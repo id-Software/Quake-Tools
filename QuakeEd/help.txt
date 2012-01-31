@@ -1,0 +1,175 @@
+QuakeEd 2.0
+by John Carmack and John Romero
+
+Terms:
+
+Brush
+A convex polyhedron with a textruedef for each face.
+
+Entity
+A set of brushes and key/value attributes. The world is allways entity 0.  Lights, doors, monsters, etc are all entities.  Entities can either have a fixed, non-modifiable size (monsters, lights, etc), or can be represented by an arbitrary collection of brushes (doors, plats, bridges, etc).
+
+An entity is created by selecting one or more brushes in the world, then selecting a class in the Entity Browser, then clicking Create Entity (or double click the class name).  If the entity class has a fixed size, the selected brushes are removed and a fixed sized brush is put in their place.  Otherwise, the selected brushes are removed from the world entity and made the contents of the newly created entity.
+
+Current Entity
+
+Selection
+The current selection of brushes is drawn with a red outline.
+
+The selection is not cleared when loading a new map, so selections can be brought over from other files.
+
+Texturedef
+A texture name with offset numbers and flip flags.  Determines what will be drawn on a brush face.  By default, all faces of a brush have the same texturedef, but you can explicityly change single faces if desired.
+
+
+
+Using QuakeEd:
+
+The NeXT "cmd" key is the alt key on the left side of the space bar.  "alt" is the alt key on the right side.
+
+Camera View
+
+click	
+Sets the current texturedef to the value of the face clicked on.
+
+Does not change any selection status.
+
+f there are any brushes selected, they will all be changed to this texturedef.
+
+If there are no brushes selected, the height of the next new brush created will be set based on the size of the brush clicked on.
+
+
+shift-click
+Toggles the selection status of the clicked on brush.
+
+If the brush is part of a different entity than the current entity, all brushes in current are deselected before selecting the new brush.  The current entity inpector is then changed to reflect the new entity.
+
+alt-click
+Sets the entire brush clicked on to the current texturedef.  Does not change any selection status.
+
+alt-ctrl-click
+Sets the single face clicked on to the current texturedef without changing the other faces.
+
+
+right-click drag
+Change camera angle.
+
+
+XYView
+
+double click
+Positions the Z checker at the click point.
+
+click drag with no selection
+The camera or Z checker will be dragged if directly clicked on, otherwise a new rectilinear brush will be dragged out from the click point.  The initial height of the brush is determined by the last brush selected or camera-clicked on.
+
+If the button is released when the new brush has no volume (a veneer), the brush is discarded.
+
+click drag with a single brush selected
+If the click is inside the selected brush, the brush will be dragged around without changing its shape.
+
+If the click is outside the brush, dragging will move the planes that face the click point.   Planes will only move directly along their normals, so a recrilinear brush will stay rectilinear.
+
+Spawned entity brushes (monsters, etc) can not be resized at all.
+
+click drag with multiple brushes selected
+No group shape changes are allowed, so the click must be inside one of the brushes, and all brushes are moved together.
+
+cmd-click drag with a single brush selected
+Holds the plane that faces the click point, and shears the adjacent planes.  To grab a single corner, click outside the brush in the overlap area between two planes.  If you click inside the brush, the top plane will be held.
+
+shift-click
+Toggles the selection status of the clicked on brush as in the camera view.
+
+Entities are allways checked before the world, so you can shift-click on entities even if there is a ceiling above them.
+
+cmd-shift click
+Connects two entities.  The current entity has a target key generated, and the clicked on entity has a targetname key created.
+
+alt-click
+alt-ctrl-click
+Sets textures as in the camera view.
+
+ctrl-click
+Moves the camera to the point clicked on.  It can be dragged dynamically if desired.
+
+right click
+right ctrl-click
+Points the camera towards the click point.  It can be dragged if desired.
+
+cmd-right click drag
+Slides the XY view to expose more space.
+
+alt-right click
+Positions a clipper tool endpoint.  The first click places it at the minimum Z of the selection.  A second click at the same point moves it to the maximum Z of the selection.
+
+Two clipper points will carve as a straight line in the XY view.  Three points (one of which must be at the max point instead of the min) will carve a slope.
+
+Escape removes the current clippers, and enter actually cuts the selection.
+
+
+ZView
+
+click drag
+The camera icon can be dragged if it is clicked on, otherwise no action if there is not a selection.
+
+If multiple brushes are selected, they will allways be dragged as a unit, no matter where the click is.
+
+If a single brush is selected, the location of the click determines if the drag will move the entire brush or just the top or bottom plane.
+
+A click anywhere on the left side of the Z view will drag the full brush.  If the click is on the right side, it will drag just the plane closest to it, changing the size of the brush.  Clicking inside a brush on the right side also drags the full brush.
+
+shift-click
+Toggles the selection status of the clicked on brush as in the camera view.
+
+alt-click
+Sets the entire brush texture as in the camera view. (alt-ctrl click is meaningless without a direction)
+
+ctrl-click
+Moves the camera to the height clicked on.  It can be dragged dynamically if desired.
+
+right click drag
+Slides the Z view to expose more space.
+
+
+Keyboard
+
+F2 : set camera wire draw mode
+F3 : set camera solid draw mode
+F4 : set camera textured draw mode
+
+F5 : set XY wire draw mode
+F6 : set XY textured draw mode
+
+F8 : Home camera pitch angle
+
+F12 : geometrically subtract the selection from the rest of the world.
+
+PageUp : moves the camera view to the next floor up.
+PageDown : moves the camera view to the next floor down.
+
+cursor arrows, a z d c , .
+Step move the camera with quake controls.
+
+Esc or End: deselect all selected brushes
+Backspace : delete all selected brushes
+
+/ : Flip the normal on the clipper tool
+
+Enter : Carve selected brushes by the clipper tool
+
+Space : clone all selected brushes.  deselects the originals and selects the copies after offsetting by the grid size.
+
+Keypad arrows: moves the current selection in gridsize incrmenets.
+
++ - : moves the current selection up or down by gridsize increments.
+
+cmd-1 - cmd-7 : change inspectors
+
+
+Text commands
+
+Obscure commands are entered by typing the command into the command field (under the output field).
+
+texname : prints the names of the textures on the selected brush.  Used to track down problems with accidentally taking graphics out of a wadfile.
+

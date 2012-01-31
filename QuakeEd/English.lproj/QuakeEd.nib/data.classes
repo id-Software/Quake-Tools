@@ -1,0 +1,220 @@
+XYView = {
+    ACTIONS = {
+	"textureViewDown:" = "textureViewDown:"; 
+	"textureViewUp:" = "textureViewUp:"; 
+    }; 
+    OUTLETS = {}; 
+    SUPERCLASS = View; 
+};
+TexturePalette = {
+    ACTIONS = {
+	"clearTexinfo:" = "clearTexinfo:"; 
+	"decRotate:" = "decRotate:"; 
+	"decXScale:" = "decXScale:"; 
+	"decXShift:" = "decXShift:"; 
+	"decYScale:" = "decYScale:"; 
+	"decYShift:" = "decYShift:"; 
+	"incRotate:" = "incRotate:"; 
+	"incXScale:" = "incXScale:"; 
+	"incXShift:" = "incXShift:"; 
+	"incYScale:" = "incYScale:"; 
+	"incYShift:" = "incYShift:"; 
+	"onlyShowMapTextures:" = "onlyShowMapTextures:"; 
+	"searchForTexture:" = "searchForTexture:"; 
+	"texturedefChanged:" = "texturedefChanged:"; 
+    }; 
+    OUTLETS = {
+	field_Rotate_i = field_Rotate_i; 
+	field_Xscale_i = field_Xscale_i; 
+	field_Xshift_i = field_Xshift_i; 
+	field_Yscale_i = field_Yscale_i; 
+	field_Yshift_i = field_Yshift_i; 
+	searchField_i = searchField_i; 
+	sizeField_i = sizeField_i; 
+	textureList_i = textureList_i; 
+	textureView_i = textureView_i; 
+    }; 
+    SUPERCLASS = Object; 
+};
+EntityPanel = {
+    ACTIONS = {
+	"addPair:" = "addPair:"; 
+	"delPair:" = "delPair:"; 
+	"setAngle:" = "setAngle:"; 
+	"setFlags:" = "setFlags:"; 
+    }; 
+    OUTLETS = {flags_i = flags_i; keyInput_i = keyInput_i; valueInput_i = valueInput_i; }; 
+    SUPERCLASS = Object; 
+};
+Project = {
+    ACTIONS = {
+	"clearBspOutput:" = "clearBspOutput:"; 
+	"clickedOnMap:" = "clickedOnMap:"; 
+	"clickedOnWad:" = "clickedOnWad:"; 
+	"saveSettings:" = "saveSettings:"; 
+    }; 
+    OUTLETS = {
+	BSPoutput_i = BSPoutput_i; 
+	basepathinfo_i = basepathinfo_i; 
+	currentmap_i = currentmap_i; 
+	descList = descList; 
+	mapList = mapList; 
+	mapbrowse_i = mapbrowse_i; 
+	pis_basepath_i = pis_basepath_i; 
+	pis_fastvis_i = pis_fastvis_i; 
+	pis_fullvis_i = pis_fullvis_i; 
+	pis_leaktest_i = pis_leaktest_i; 
+	pis_novis_i = pis_novis_i; 
+	pis_panel_i = pis_panel_i; 
+	pis_relight_i = pis_relight_i; 
+	pis_wads_i = pis_wads_i; 
+	projectInfo = projectInfo; 
+    }; 
+    SUPERCLASS = Object; 
+};
+PopScrollView = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = ScrollView; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+SetBrush = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = Storage; };
+CameraView = {
+    ACTIONS = {"drawMode:" = "drawMode:"; "homeView:" = "homeView:"; }; 
+    OUTLETS = {mode_radio_i = mode_radio_i; }; 
+    SUPERCLASS = View; 
+};
+Things = {
+    ACTIONS = {
+	"addPair:" = "addPair:"; 
+	"delPair:" = "delPair:"; 
+	"doubleClickEntity:" = "doubleClickEntity:"; 
+	"newprog_path:" = "newprog_path:"; 
+	"reloadEntityClasses:" = "reloadEntityClasses:"; 
+	"selectEntity:" = "selectEntity:"; 
+	"setAngle:" = "setAngle:"; 
+	"setFlags:" = "setFlags:"; 
+    }; 
+    OUTLETS = {
+	entity_browser_i = entity_browser_i; 
+	entity_comment_i = entity_comment_i; 
+	flags_i = flags_i; 
+	keyInput_i = keyInput_i; 
+	prog_path_i = prog_path_i; 
+	valueInput_i = valueInput_i; 
+    }; 
+    SUPERCLASS = Object; 
+};
+Map = {
+    ACTIONS = {
+	"cloneSelection:" = "cloneSelection:"; 
+	"flip_x:" = "flip_x:"; 
+	"flip_y:" = "flip_y:"; 
+	"flip_z:" = "flip_z:"; 
+	"makeEntity:" = "makeEntity:"; 
+	"rotate_x:" = "rotate_x:"; 
+	"rotate_y:" = "rotate_y:"; 
+	"rotate_z:" = "rotate_z:"; 
+	"selectCompleteEntity:" = "selectCompleteEntity:"; 
+	"selectCompletelyInside:" = "selectCompletelyInside:"; 
+	"selectPartiallyInside:" = "selectPartiallyInside:"; 
+	"shortBrush:" = "shortBrush:"; 
+	"subtractSelection:" = "subtractSelection:"; 
+	"tallBrush:" = "tallBrush:"; 
+    }; 
+    OUTLETS = {currentEntity = currentEntity; oldselection = oldselection; }; 
+    SUPERCLASS = List; 
+};
+Entity = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = Object; };
+Clipper = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = Object; };
+InspectorView = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = View; };
+QuakeEd = {
+    ACTIONS = {
+	"BSP_FastVis:" = "BSP_FastVis:"; 
+	"BSP_Full:" = "BSP_Full:"; 
+	"BSP_NoVis:" = "BSP_NoVis:"; 
+	"BSP_entities:" = "BSP_entities:"; 
+	"BSP_leaktest:" = "BSP_leaktest:"; 
+	"BSP_relight:" = "BSP_relight:"; 
+	"BSP_stop:" = "BSP_stop:"; 
+	"appDidInit:" = "appDidInit:"; 
+	"appWillTerminate:" = "appWillTerminate:"; 
+	"applyRegion:" = "applyRegion:"; 
+	"centerCamera:" = "centerCamera:"; 
+	"centerZChecker:" = "centerZChecker:"; 
+	"changeXYLookUp:" = "changeXYLookUp:"; 
+	"clear:" = "clear:"; 
+	"open:" = "open:"; 
+	"openProject:" = "openProject:"; 
+	"save:" = "save:"; 
+	"saveAs:" = "saveAs:"; 
+	"setBrushRegion:" = "setBrushRegion:"; 
+	"setXYRegion:" = "setXYRegion:"; 
+	"textCommand:" = "textCommand:"; 
+	"updateAll:" = "updateAll:"; 
+    }; 
+    OUTLETS = {
+	brushcount_i = brushcount_i; 
+	cmd_in_i = cmd_in_i; 
+	cmd_out_i = cmd_out_i; 
+	entitycount_i = entitycount_i; 
+	filter_clip_i = filter_clip_i; 
+	filter_entities_i = filter_entities_i; 
+	filter_light_i = filter_light_i; 
+	filter_path_i = filter_path_i; 
+	filter_water_i = filter_water_i; 
+	filter_world_i = filter_world_i; 
+	regionbutton_i = regionbutton_i; 
+	show_coordinates_i = show_coordinates_i; 
+	show_names_i = show_names_i; 
+	xy_drawmode_i = xy_drawmode_i; 
+    }; 
+    SUPERCLASS = Window; 
+};
+InspectorControl = {
+    ACTIONS = {"changeInspector:" = "changeInspector:"; }; 
+    OUTLETS = {
+	b_textureField_i = b_textureField_i; 
+	contentList = contentList; 
+	inspectorSubview_i = inspectorSubview_i; 
+	inspectorView_i = inspectorView_i; 
+	inspectors_i = inspectors_i; 
+	itemHelp_i = itemHelp_i; 
+	itemList = itemList; 
+	itemOutput_i = itemOutput_i; 
+	itemPrefs_i = itemPrefs_i; 
+	itemProject_i = itemProject_i; 
+	itemSettings_i = itemSettings_i; 
+	itemTextures_i = itemTextures_i; 
+	itemThings_i = itemThings_i; 
+	obj_genkeypair_i = obj_genkeypair_i; 
+	obj_textures_i = obj_textures_i; 
+	popUpButton_i = popUpButton_i; 
+	popUpMatrix_i = popUpMatrix_i; 
+	printList = printList; 
+	win_help_i = win_help_i; 
+	win_output_i = win_output_i; 
+	win_prefs_i = win_prefs_i; 
+	win_project_i = win_project_i; 
+	win_settings_i = win_settings_i; 
+	win_textures_i = win_textures_i; 
+	win_things_i = win_things_i; 
+	windowList = windowList; 
+    }; 
+    SUPERCLASS = Object; 
+};
+Preferences = {
+    ACTIONS = {
+	"UIChanged:" = "UIChanged:"; 
+	"setBspSound:" = "setBspSound:"; 
+	"setCurrentProject:" = "setCurrentProject:"; 
+    }; 
+    OUTLETS = {
+	brushOffset_i = brushOffset_i; 
+	bspSoundField_i = bspSoundField_i; 
+	bspSound_i = bspSound_i; 
+	showBSP_i = showBSP_i; 
+	startproject_i = startproject_i; 
+	startwad_i = startwad_i; 
+	xlight_i = xlight_i; 
+	ylight_i = ylight_i; 
+	zlight_i = zlight_i; 
+    }; 
+    SUPERCLASS = Object; 
+};

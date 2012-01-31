@@ -1,0 +1,13 @@
+{
+	{"basepath"	"/raid/quake/id1"}
+	{"maps"	"jrbase1	jrbase2	jrbase4	jrwiz1	jrwiz2	jrdungn	jrmed1	jrmed2	jrstart tim4	tim5	tim6	tim7	tim9	tboss	amtest98	ammap2	amtest1 amdm3	amdem1	ammet2	amlev13	ammech3	schurch	smotte	sramp2	scath	sally	spit stemple"}
+	{"desc"	"jrbase1	jrbase2	jrbase4	jrwiz1	jrwiz2	jrdungn	jrmed1	jrmed2	jrstart tim4	tim5	tim6	tim7	tim9	tboss	amtest98	ammap2	amtest1 amdm3	amdem1	ammet2	amlev13	ammech3	schurch	smotte	sramp2	scath	sally	spit stemple"}
+	{"wads"	"gfx/medieval.wad gfx/base.wad gfx/wizard.wad gfx/metal.wad gfx/tim.wad gfx/items.wad gfx/start.wad"}
+
+	{"bspfullvis"	"rsh satan @/LocalApps/qbsp $1 $2 ; /LocalApps/light -extra $2 ; /LocalApps/vis $2@"}
+	{"bspfastvis"	"rsh satan @/LocalApps/qbsp $1 $2 ; /LocalApps/light  $2 ; /LocalApps/vis -fast $2@"}
+	{"bspnovis"	"rsh satan @/LocalApps/qbsp $1 $2 ; /LocalApps/light $2@"}
+	{"bsprelight"	"rsh satan @/LocalApps/qbsp -onlyents $1 $2 ; /LocalApps/light -extra $2@"}
+	{"bspleaktest"	"rsh satan @/LocalApps/qbsp -mark -notjunc $1 $2 ; /LocalApps/light $2@"}
+	{"bspentities"	"rsh satan @/LocalApps/qbsp -onlyents $1 $2@"}
+}
